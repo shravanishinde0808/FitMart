@@ -2,7 +2,7 @@
 
 const CONSTANTS = {
   // Request Body
-  BODY_PARSER_LIMIT: process.env.BODY_PARSER_LIMIT || "100kb",
+  BODY_PARSER_LIMIT: process.env.BODY_PARSER_LIMIT || "1mb",
 
   // Stock Thresholds
   LOW_STOCK_THRESHOLD: 5,
