@@ -539,6 +539,10 @@ npm run dev
 NODE_ENV=development
 PORT=5000
 
+# Maximum request body size for JSON and URL-encoded requests
+# Default: 1mb
+BODY_PARSER_LIMIT=1mb
+
 ALLOWED_ORIGIN=http://localhost:5173
 APP_BASE_URL=http://localhost:5173
 
