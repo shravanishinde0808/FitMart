@@ -5,7 +5,12 @@ const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
-const { RATE_LIMIT_WINDOW_MS, API_LIMIT_MAX, PAYMENT_LIMIT_MAX, DEFAULT_PORT } = require("./config/constants");
+const {
+  RATE_LIMIT_WINDOW_MS,
+  API_LIMIT_MAX,
+  PAYMENT_LIMIT_MAX,
+  DEFAULT_PORT,
+} = require("./config/constants");
 const app = express();
 const port = process.env.PORT || DEFAULT_PORT;
 const allowedOrigin = process.env.ALLOWED_ORIGIN || "";
@@ -106,8 +111,7 @@ app.use(
 );
 
 app.use(helmet());
-app.use(express.json({ limit: "10kb" }));
-app.use(express.urlencoded({ extended: true, limit: "10kb" }));
+app.use(require("./middleware/bodyParser"));
 // Disable automatic ETag generation to avoid conditional 304 responses
 app.disable("etag");
 

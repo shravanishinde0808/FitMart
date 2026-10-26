@@ -1,6 +1,9 @@
 // server/config/constants.js
 
 const CONSTANTS = {
+  // Request Body
+  BODY_PARSER_LIMIT: process.env.BODY_PARSER_LIMIT || "100kb",
+
   // Stock Thresholds
   LOW_STOCK_THRESHOLD: 5,
 
